@@ -1,10 +1,10 @@
 NEWLINE=$'\n'
 
-RED=$(tput setaf 1)
-GREEN=$(tput setaf 2)
-YELLOW=$(tput setaf 3)
-BLUE=$(tput setaf 4)
-DEFAULT_COLOR=$(tput setaf 9)
+TEXT_RED=$(tput setaf 1)
+TEXT_GREEN=$(tput setaf 2)
+TEXT_YELLOW=$(tput setaf 3)
+TEXT_BLUE=$(tput setaf 4)
+TEXT_DEFAULT=$(tput sgr0)
 
-BOLD=$(tput bold)
-NORMAL=$(tput sgr0)
+FONT_BOLD=$(tput bold)
+FONT_NORMAL=$(tput sgr0)

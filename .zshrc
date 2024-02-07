@@ -12,4 +12,4 @@ if [[ -f ~/.zshrc.local ]]; then
   source ~/.zshrc.local
 fi
 
-PROMPT='${NEWLINE}%B%*%b | %F{green}%n@%m%f | %B%~%b | $(git_prompt)${NEWLINE}%% '
+PROMPT='${NEWLINE}${FONT_BOLD}%*${FONT_NORMAL} | ${TEXT_GREEN}%n@%m${TEXT_DEFAULT} | ${FONT_BOLD}%~${FONT_NORMAL} | $(git_prompt)${NEWLINE}%% '
