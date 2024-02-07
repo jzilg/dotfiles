@@ -6,3 +6,6 @@
 
 # VS Code
 .vscode
+
+# zsh plugins
+./zsh/plugins/

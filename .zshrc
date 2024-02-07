@@ -5,6 +5,7 @@ source ./.zsh/history.zsh
 source ./.zsh/color.sh
 source ./.zsh/text.sh
 source ./.zsh/git-prompt.sh
+source ./.zsh/plugins.zsh
 
 if [[ -f ~/.alias.sh ]]; then
   source ~/.alias.sh
