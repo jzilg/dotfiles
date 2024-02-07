@@ -1,5 +1,6 @@
 setopt PROMPT_SUBST
 
+source ./.zsh/autocomplete.zsh
 source ./.zsh/alias.sh
 source ./.zsh/history.zsh
 source ./.zsh/color.sh
