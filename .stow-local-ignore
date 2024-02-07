@@ -1,0 +1,13 @@
+# Comments and blank lines are allowed.
+
+RCS
+.+,v
+
+\.git
+\.gitignore
+
+^/README.*
+^/LICENSE.*
+^/COPYING
+
+.editorconfig
