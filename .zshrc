@@ -1,4 +1,4 @@
-setopt PROMPT_SUBST
+setopt prompt_subst
 
 source ./.zsh/autocomplete.zsh
 source ./.zsh/alias.sh
