@@ -7,4 +7,3 @@ alias mv='mv -iv'
 alias gst='git status'
 alias gbr='git branch -vv'
 alias ports='lsof -PiTCP -sTCP:LISTEN'
-

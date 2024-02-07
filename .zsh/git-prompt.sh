@@ -66,4 +66,3 @@ git_prompt() {
     fi
   fi
 }
-

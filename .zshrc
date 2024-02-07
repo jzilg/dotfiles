@@ -11,4 +11,3 @@ if [[ -f ~/.alias.sh ]]; then
 fi
 
 PROMPT='${NEWLINE}%B%*%b | %F{green}%n@%m%f | %B%~%b | $(git_prompt)${NEWLINE}%% '
-

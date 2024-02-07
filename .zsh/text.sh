@@ -8,4 +8,3 @@ DEFAULT_COLOR=$(tput setaf 9)
 
 BOLD=$(tput bold)
 NORMAL=$(tput sgr0)
-
