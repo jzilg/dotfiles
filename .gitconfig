@@ -1,0 +1,6 @@
+[pull]
+	rebase = true
+[rerere]
+    enabled = true
+[include]
+    path = ~/.gitconfig-user
