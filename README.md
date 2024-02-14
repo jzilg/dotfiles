@@ -20,3 +20,10 @@ cd .dotfiles && stow .
 ```shell
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/plugins/zsh-autosuggestions
 ```
+
+### Local files
+
+The following files can be used to extend configuration while not being tracked by git:
+
+- .zshrc.local.zsh will be imported by .zshrc
+- .gitconfig.local will be imported by .gitconfig
