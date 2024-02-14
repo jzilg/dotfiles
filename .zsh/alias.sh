@@ -1,6 +1,5 @@
 alias ll='ls -la'
 alias ls='ls -FH'
-alias dir='dir -FHG'
 alias cp='cp -iv'
 alias rm='rm -i'
 alias mv='mv -iv'
