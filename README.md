@@ -21,6 +21,17 @@ cd .dotfiles && stow .
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/plugins/zsh-autosuggestions
 ```
 
+### Install vim plugins
+
+```shell
+git clone https://github.com/joshdick/onedark.vim.git &&
+mkdir -p ~/.vim/colors &&
+mkdir -p ~/.vim/autoload &&
+cp -iv ./onedark.vim/colors/onedark.vim ~/.vim/colors/onedark.vim &&
+cp -iv ./onedark.vim/autoload/onedark.vim ~/.vim/autoload/onedark.vim &&
+rm -rf ./onedark.vim
+```
+
 ### Local files
 
 The following files can be used to extend configuration while not being tracked by git:

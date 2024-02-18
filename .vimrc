@@ -1,5 +1,5 @@
 syntax enable
-colorscheme slate
+colorscheme onedark
 filetype indent on
 
 set number
