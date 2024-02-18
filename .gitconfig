@@ -4,3 +4,5 @@
     enabled = true
 [include]
     path = ~/.gitconfig.local
+[core]
+    editor = vim
