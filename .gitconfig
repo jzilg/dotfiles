@@ -2,7 +2,7 @@
     rebase = true
 [rerere]
     enabled = true
-[include]
-    path = ~/.gitconfig.local
 [core]
     editor = vim
+[include]
+    path = ~/.gitconfig.local
