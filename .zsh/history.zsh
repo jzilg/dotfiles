@@ -12,3 +12,5 @@ setopt hist_ignore_space
 setopt hist_find_no_dups
 setopt hist_save_no_dups
 setopt hist_reduce_blanks
+
+alias history='history 1'
