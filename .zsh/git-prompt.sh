@@ -34,13 +34,11 @@ git_prompt() {
   fi
 
   aheadCount=$(echo "$gitStatus" | grep -o "ahead [0-9]*" | grep -o "[0-9]*$")
-  ahead=
   if [ "$aheadCount" -gt 0 ]; then
     ahead="${DEFAULT_COLOR}↑${aheadCount}"
   fi
 
   behindCount=$(echo "$gitStatus" | grep -o "behind [0-9]*" | grep -o "[0-9]*$")
-  behind=
   if [ "$behindCount" -gt 0 ]; then
     behind="${DEFAULT_COLOR}↓${behindCount}"
   fi
@@ -52,25 +50,21 @@ git_prompt() {
     statusIsCleanIndicator=""
 
     untrackedFilesCount=$(echo "$gitStatus" | grep -c "??")
-    untrackedFiles=
     if [ "$untrackedFilesCount" -gt 0 ]; then
       untrackedFiles="${RED}…?"
     fi
 
     notStagedFilesCount=$(echo "$gitStatus" | grep -Ec '^(.M|.A|.R|.C|.D)')
-    notStagedFiles=
     if [ "$notStagedFilesCount" -gt 0 ]; then
       notStagedFiles="${RED}●$notStagedFilesCount"
     fi
 
     stagedFilesCount=$(echo "$gitStatus" | grep -Ec '^(M|A|R|C|D)')
-    stagedFiles=
     if [ "$stagedFilesCount" -gt 0 ]; then
       stagedFiles="${GREEN}●$stagedFilesCount"
     fi
 
     conflictedFilesCount=$(echo "$gitStatus" | grep -Ec "^(DD|AU|UD|UA|DU|AA|UU)")
-    conflictedFiles=
     if [ "$conflictedFilesCount" -gt 0 ]; then
       conflictedFiles="${RED}${BOLD}$conflictedFilesCount Conflicted!${NORMAL}"
     fi
