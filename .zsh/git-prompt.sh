@@ -70,5 +70,5 @@ git_prompt() {
     fi
   fi
 
-  echo "${ORANGE}[${rebaseIndicator}${mergeIndicator}${branchName}${ahead}${behind} ${statusIsCleanIndicator}${conflictedFiles}${stagedFiles}${notStagedFiles}${untrackedFiles}${stashedFiles}${ORANGE}]${DEFAULT_COLOR}"
+  echo "${ORANGE}[${branchName} ${rebaseIndicator}${mergeIndicator}${ahead}${behind} ${statusIsCleanIndicator}${conflictedFiles}${stagedFiles}${notStagedFiles}${untrackedFiles}${stashedFiles}${ORANGE}]${DEFAULT_COLOR}"
 }
