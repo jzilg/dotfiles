@@ -30,7 +30,7 @@ git_prompt() {
 
   # Detect stashed files
   if [ -n "$(git stash list)" ]; then
-      stashedFiles=" ${DEFAULT_COLOR}*"
+    stashedFiles="${DEFAULT_COLOR}*"
   fi
 
   aheadCount=$(echo "$gitStatus" | grep -o "ahead [0-9]*" | grep -o "[0-9]*$")
@@ -45,33 +45,36 @@ git_prompt() {
     behind="${DEFAULT_COLOR}↓${behindCount}"
   fi
 
-  if [ "$(echo "$gitStatus" | wc -l | xargs)" -eq 1 ]; then
-    echo "${ORANGE}[${branchName}${ahead}${behind} ${GREEN}${BOLD}✔${NORMAL}${stashedFiles}${ORANGE}]${DEFAULT_COLOR}"
-  else
+  statusIsCleanIndicator="${GREEN}${BOLD}✔${NORMAL}"
+
+  # if git status is not clean check for reasons
+  if [ "$(echo "$gitStatus" | wc -l | xargs)" -ne 1 ]; then
+    statusIsCleanIndicator=""
+
     untrackedFilesCount=$(echo "$gitStatus" | grep -c "??")
     untrackedFiles=
     if [ "$untrackedFilesCount" -gt 0 ]; then
-      untrackedFiles=" ${RED}…?"
+      untrackedFiles="${RED}…?"
     fi
 
     notStagedFilesCount=$(echo "$gitStatus" | grep -Ec '^(.M|.A|.R|.C|.D)')
     notStagedFiles=
     if [ "$notStagedFilesCount" -gt 0 ]; then
-      notStagedFiles=" ${RED}●$notStagedFilesCount"
+      notStagedFiles="${RED}●$notStagedFilesCount"
     fi
 
     stagedFilesCount=$(echo "$gitStatus" | grep -Ec '^(M|A|R|C|D)')
     stagedFiles=
     if [ "$stagedFilesCount" -gt 0 ]; then
-      stagedFiles=" ${GREEN}●$stagedFilesCount"
+      stagedFiles="${GREEN}●$stagedFilesCount"
     fi
 
     conflictedFilesCount=$(echo "$gitStatus" | grep -Ec "^(DD|AU|UD|UA|DU|AA|UU)")
     conflictedFiles=
     if [ "$conflictedFilesCount" -gt 0 ]; then
-      conflictedFiles=" ${RED}${BOLD}$conflictedFilesCount Conflicted!${NORMAL}"
+      conflictedFiles="${RED}${BOLD}$conflictedFilesCount Conflicted!${NORMAL}"
     fi
-
-    echo "${ORANGE}[${branchName}${rebaseIndicator}${mergeIndicator}${ahead}${behind}${conflictedFiles}${stagedFiles}${notStagedFiles}${untrackedFiles}${stashedFiles}${ORANGE}]${DEFAULT_COLOR}"
   fi
+
+  echo "${ORANGE}[${rebaseIndicator}${mergeIndicator}${branchName}${ahead}${behind} ${statusIsCleanIndicator}${conflictedFiles}${stagedFiles}${notStagedFiles}${untrackedFiles}${stashedFiles}${ORANGE}]${DEFAULT_COLOR}"
 }
