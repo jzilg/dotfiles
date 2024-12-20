@@ -25,7 +25,7 @@ git_prompt() {
 
   # Detect merge
   if [ -f "$(git rev-parse --git-dir)/MERGE_HEAD" ]; then
-    mergeIndicator="${BOLD}merging →"
+    mergeIndicator=" ${BOLD}merging →"
   fi
 
   # Detect stashed files
@@ -70,5 +70,5 @@ git_prompt() {
     fi
   fi
 
-  echo "${ORANGE}[${branchName} ${rebaseIndicator}${mergeIndicator}${ahead}${behind} ${statusIsCleanIndicator}${conflictedFiles}${stagedFiles}${notStagedFiles}${untrackedFiles}${stashedFiles}${ORANGE}]${DEFAULT_COLOR}"
+  echo "${ORANGE}[${branchName}${rebaseIndicator}${mergeIndicator}${ahead}${behind} ${statusIsCleanIndicator}${conflictedFiles}${stagedFiles}${notStagedFiles}${untrackedFiles}${stashedFiles}${ORANGE}]${DEFAULT_COLOR}"
 }
