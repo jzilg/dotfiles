@@ -1,9 +1,9 @@
 #!/bin/sh
 
-DEFAULT_COLOR="\033[0m"
-RED="\033[0;31m"
-GREEN="\033[0;32m"
-ORANGE="\033[0;33m"
+DEFAULT_COLOR=$(tput sgr0)
+RED=$(tput setaf 1)
+GREEN=$(tput setaf 2)
+ORANGE=$(tput setaf 3)
 
 BOLD=$(tput bold)
 NORMAL=$(tput sgr0)
