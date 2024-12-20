@@ -9,9 +9,8 @@ BOLD=$(tput bold)
 NORMAL=$(tput sgr0)
 
 git_prompt() {
-  insideGitRepo="$(git status 2>/dev/null)"
-
-  if ! [ "$insideGitRepo" ]; then
+  # early return if not in a git repo
+  if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     return
   fi
 
