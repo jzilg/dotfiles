@@ -1,0 +1,2 @@
+# delete line
+keybind = cmd+backspace=text:\x15
