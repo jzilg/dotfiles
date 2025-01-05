@@ -7,4 +7,4 @@
 [include]
     path = ~/.gitconfig.local
 [push]
-	autoSetupRemote = true
+    autoSetupRemote = true
