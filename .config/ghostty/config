@@ -1,5 +1,7 @@
 # delete line
 keybind = cmd+backspace=text:\x15
 
+font-size = 14
+window-save-state = always
 window-padding-x = 10
 window-padding-y = 10
