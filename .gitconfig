@@ -8,3 +8,8 @@
     path = ~/.gitconfig.local
 [push]
     autoSetupRemote = true
+[branch]
+    sort = -committerdate
+[diff]
+    algorithm = histogram
+
