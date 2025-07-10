@@ -15,6 +15,14 @@ git clone git@github.com:jzilg/dotfiles.git ~/.dotfiles
 cd .dotfiles && stow .
 ```
 
+### Add gitconfig base
+
+add this line to your `.gitconfig`
+
+```shell
+source ~/.gitconfig-base
+```
+
 ### Add zsh base
 
 add this line to your `.zshrc`
