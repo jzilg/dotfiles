@@ -15,6 +15,14 @@ git clone git@github.com:jzilg/dotfiles.git ~/.dotfiles
 cd .dotfiles && stow .
 ```
 
+### Add zsh base
+
+add this line to your `.zshrc`
+
+```shell
+source ~/.zshrc-base.zsh
+```
+
 ### Install zsh plugins
 
 ```shell
