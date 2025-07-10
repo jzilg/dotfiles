@@ -7,5 +7,6 @@
 # VS Code
 .vscode
 
-# zsh plugins
+# zsh
 .zsh/plugins/
+.zsh/completions/
