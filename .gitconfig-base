@@ -4,8 +4,6 @@
     enabled = true
 [core]
     editor = vim
-[include]
-    path = ~/.gitconfig.local
 [push]
     autoSetupRemote = true
 [branch]
