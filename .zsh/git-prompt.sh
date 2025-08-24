@@ -16,6 +16,7 @@ git_prompt() {
 
   gitStatus=$(git status -sb)
   branchName=$(git branch --show-current)
+  user=$(git config user.email)
 
   # Detect rebase
   if [ -d "$(git rev-parse --git-dir)/rebase-merge" ] || [ -d "$(git rev-parse --git-dir)/rebase-apply" ]; then
@@ -69,5 +70,5 @@ git_prompt() {
     fi
   fi
 
-  echo "${ORANGE}[${branchName}${rebaseIndicator}${mergeIndicator}${ahead}${behind} ${statusIsCleanIndicator}${conflictedFiles}${stagedFiles}${notStagedFiles}${untrackedFiles}${stashedFiles}${ORANGE}]${DEFAULT_COLOR}"
+  echo "${ORANGE}${user} [${branchName}${rebaseIndicator}${mergeIndicator}${ahead}${behind} ${statusIsCleanIndicator}${conflictedFiles}${stagedFiles}${notStagedFiles}${untrackedFiles}${stashedFiles}${ORANGE}]${DEFAULT_COLOR}"
 }
