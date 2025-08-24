@@ -21,7 +21,8 @@ cd .dotfiles && stow .
 add this line to your `.gitconfig`
 
 ```shell
-source ~/.gitconfig-base
+[include]
+    path = ~/.gitconfig-base
 ```
 
 ### Add zsh base
