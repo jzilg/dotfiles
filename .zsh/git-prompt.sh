@@ -8,6 +8,13 @@ ORANGE=$(tput setaf 3)
 BOLD=$(tput bold)
 NORMAL=$(tput sgr0)
 
+truncate() {
+  local string="$1"
+  local maxLength="$2"
+
+  echo $string | sed "s/\\(.\\{$maxLength\\}\\).*/\\1…/"
+}
+
 git_prompt() {
   # early return if not in a git repo
   if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
@@ -70,5 +77,5 @@ git_prompt() {
     fi
   fi
 
-  echo "${ORANGE}${user} [${branchName}${rebaseIndicator}${mergeIndicator}${ahead}${behind} ${statusIsCleanIndicator}${conflictedFiles}${stagedFiles}${notStagedFiles}${untrackedFiles}${stashedFiles}${ORANGE}]${DEFAULT_COLOR}"
+  echo "${ORANGE}$(truncate $user 20) [${branchName}${rebaseIndicator}${mergeIndicator}${ahead}${behind} ${statusIsCleanIndicator}${conflictedFiles}${stagedFiles}${notStagedFiles}${untrackedFiles}${stashedFiles}${ORANGE}]${DEFAULT_COLOR}"
 }
