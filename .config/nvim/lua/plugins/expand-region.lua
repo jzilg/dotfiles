@@ -14,14 +14,14 @@ return {
       ["ib"] = 1, -- inner parentheses ( ... )
       ["iB"] = 1, -- inner curly braces { ... }
       ["il"] = 1, -- inner line (text inside the current line)
-      ["it"] = 1, -- inner tag (HTML/XML/JSX)
-      ["ip"] = 1, -- inner paragraph
+      ["it"] = 0, -- inner tag (HTML/XML/JSX)
+      ["ip"] = 0, -- inner paragraph
       ["ie"] = 1, -- inner sentence (textobj-sentence)
       ["al"] = 1, -- around line
       ["a]"] = 1, -- around square brackets [ ... ]
       ["ab"] = 1, -- around parentheses ( ... )
       ["aB"] = 1, -- around curly braces { ... }
-      ["ii"] = 1, -- inner indent block (requires vim-textobj-indent)
+      -- ["ii"] = 1, -- inner indent block (requires vim-textobj-indent)
       ["ai"] = 1, -- around indent block (requires vim-textobj-indent)
       ["at"] = 1, -- around tag (HTML/XML/JSX)
     }
